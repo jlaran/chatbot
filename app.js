@@ -566,23 +566,19 @@ function sendButtonMessage(recipientId) {
         type: "template",
         payload: {
           template_type: "button",
-          text: "Hola! Un gusto atenderle en Freshfruit! Contános como podemos ayudarte...",
+          text: "This is test text ",
           buttons:[{
             type: "web_url",
-            url: "https://www.google.com",
-            title: "Visita nuestro sitio web"
+            url: "https://www.oculus.com/en-us/rift/",
+            title: "Open Web URL"
           }, {
             type: "postback",
-            title: "¿Cómo pido una ensalada?",
-            payload: "pedir"
+            title: "Trigger Postback",
+            payload: "DEVELOPER_DEFINED_PAYLOAD"
           }, {
-            type: "postback",
-            title: "¿Cómo les pago?",
-            payload: "pagar"
-          }, {
-            type: "postback",
-            title: "Pedidos empresariales",
-            payload: "empresarial"
+            type: "phone_number",
+            title: "Call Phone Number",
+            payload: "+16505551234"
           }]
         }
       }
