@@ -255,25 +255,40 @@ function receivedMessage(event) {
     // keywords and send back the corresponding example. Otherwise, just echo
     // the text we received.
     switch (messageText) {
-      case 'image':
-        sendImageMessage(senderID);
+      case 'Hola':
+        setTimeout(function(){
+          sendReadReceipt(senderID);
+        }, 1000);
+        setTimeout(function(){
+          sendTypingOn(senderID);
+        }, 3000);
+        setTimeout(function(){
+          sendTypingOff(senderID);
+        }, 4000)
+        setTimeout(function(){
+          sendTextMessage(senderID, "Hola! ¿Cómo esta?");
+        }, 4200);
         break;
 
-      case 'gif':
-        sendGifMessage(senderID);
-        break;
+      // case 'image':
+      //   sendImageMessage(senderID);
+      //   break;
 
-      case 'audio':
-        sendAudioMessage(senderID);
-        break;
+      // case 'gif':
+      //   sendGifMessage(senderID);
+      //   break;
 
-      case 'video':
-        sendVideoMessage(senderID);
-        break;
+      // case 'audio':
+      //   sendAudioMessage(senderID);
+      //   break;
 
-      case 'file':
-        sendFileMessage(senderID);
-        break;
+      // case 'video':
+      //   sendVideoMessage(senderID);
+      //   break;
+
+      // case 'file':
+      //   sendFileMessage(senderID);
+      //   break;
 
       case 'button':
         sendButtonMessage(senderID);
@@ -283,29 +298,29 @@ function receivedMessage(event) {
         sendGenericMessage(senderID);
         break;
 
-      case 'receipt':
-        sendReceiptMessage(senderID);
-        break;
+      // case 'receipt':
+      //   sendReceiptMessage(senderID);
+      //   break;
 
       case 'quick reply':
         sendQuickReply(senderID);
         break;        
 
-      case 'read receipt':
-        sendReadReceipt(senderID);
-        break;        
+      // case 'read receipt':
+      //   sendReadReceipt(senderID);
+      //   break;        
 
-      case 'typing on':
-        sendTypingOn(senderID);
-        break;        
+      // case 'typing on':
+      //   sendTypingOn(senderID);
+      //   break;        
 
-      case 'typing off':
-        sendTypingOff(senderID);
-        break;        
+      // case 'typing off':
+      //   sendTypingOff(senderID);
+      //   break;        
 
-      case 'account linking':
-        sendAccountLinking(senderID);
-        break;
+      // case 'account linking':
+      //   sendAccountLinking(senderID);
+      //   break;
 
       default:
         setTimeout(function(){
@@ -535,7 +550,7 @@ function sendTextMessage(recipientId, messageText) {
       id: recipientId
     },
     message: {
-      text: "Hola, ¿Cómo esta?", //messageText
+      text: messageText, //messageText
       metadata: "DEVELOPER_DEFINED_METADATA"
     }
   };
