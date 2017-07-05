@@ -568,25 +568,18 @@ function sendButtonMessage(recipientId) {
           template_type: "button",
           text: "Hola! Un gusto atenderle en Freshfruit! Contános como podemos ayudarte...",
           buttons:[{
-            type: "web_url",
-            url: "https://www.google.com",
-            title: "Visita nuestro sitio web"
-          }, {
             type: "postback",
             title: "Quiero una ensalada!",
-            payload: "DEVELOPER_DEFINED_PAYLOAD"
-          },{
-            type: "phone_number",
+            payload: "quiero"
+          }, {
+            type: "postback",
             title: "¿Cómo les pago?",
-            payload: "+16505551234"
+            payload: "pago"
           },{
-            type: "phone_number",
+            type: "postback",
             title: "Pedidos empresariales",
-            payload: "+16505551234"
-          }
-
-
-          ]
+            payload: "empresarial"
+          }]
         }
       }
     }
