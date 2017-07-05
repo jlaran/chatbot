@@ -255,21 +255,6 @@ function receivedMessage(event) {
     // keywords and send back the corresponding example. Otherwise, just echo
     // the text we received.
     switch (messageText) {
-      case 'Hola':
-        setTimeout(function(){
-          sendReadReceipt(senderID);
-        }, 1000);
-        setTimeout(function(){
-          sendTypingOn(senderID);
-        }, 3000);
-        setTimeout(function(){
-          sendTypingOff(senderID);
-        }, 4000)
-        setTimeout(function(){
-          sendTextMessage(senderID, "Hola! ¿Cómo esta?");
-        }, 4200);
-        break;
-
       // case 'image':
       //   sendImageMessage(senderID);
       //   break;
@@ -290,21 +275,21 @@ function receivedMessage(event) {
       //   sendFileMessage(senderID);
       //   break;
 
-      case 'button':
-        sendButtonMessage(senderID);
-        break;
+      // case 'button':
+      //   sendButtonMessage(senderID);
+      //   break;
 
-      case 'generic':
-        sendGenericMessage(senderID);
-        break;
+      // case 'generic':
+      //   sendGenericMessage(senderID);
+      //   break;
 
       // case 'receipt':
       //   sendReceiptMessage(senderID);
       //   break;
 
-      case 'quick reply':
-        sendQuickReply(senderID);
-        break;        
+      // case 'quick reply':
+      //   sendQuickReply(senderID);
+      //   break;        
 
       // case 'read receipt':
       //   sendReadReceipt(senderID);
@@ -333,7 +318,7 @@ function receivedMessage(event) {
           sendTypingOff(senderID);
         }, 4000)
         setTimeout(function(){
-          sendTextMessage(senderID, messageText);
+            sendButtonMessage(senderID);
         }, 4200);
     }
   } else if (messageAttachments) {
@@ -572,7 +557,7 @@ function sendButtonMessage(recipientId) {
         type: "template",
         payload: {
           template_type: "button",
-          text: "This is test text",
+          text: "This is test text "+recipientId,
           buttons:[{
             type: "web_url",
             url: "https://www.oculus.com/en-us/rift/",
