@@ -319,7 +319,7 @@ function receivedMessage(event) {
         }, 3000)
         setTimeout(function(){
           sendTextMessage(senderID, messageText);
-        }, 3500);
+        }, 3200);
     }
   } else if (messageAttachments) {
     sendTextMessage(senderID, "Message with attachment received");
