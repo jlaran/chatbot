@@ -242,10 +242,22 @@ function receivedMessage(event) {
     return;
   } else if (quickReply) {
     var quickReplyPayload = quickReply.payload;
-    console.log("Quick reply for message %s with payload %s",
-      messageId, quickReplyPayload);
+    console.log("Quick reply for message %s with payload %s", messageId, quickReplyPayload);
 
-    sendTextMessage(senderID, "Quick reply tapped");
+    switch (quickReplyPayload) {
+      case 'uno':
+        sendTextMessage(senderID, "Opcion uno tapped");
+        break;
+
+      case 'dos':
+        sendTextMessage(senderID, "Opcion dos tapped");
+        break;
+
+      case 'tres':
+        sendTextMessage(senderID, "Opcion tres tapped");
+        break;
+    }
+    
     return;
   }
 
@@ -711,17 +723,17 @@ function sendQuickReply(recipientId) {
         {
           "content_type":"text",
           "title":"Action",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ACTION"
+          "payload":"uno"
         },
         {
           "content_type":"text",
           "title":"Comedy",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_COMEDY"
+          "payload":"dos"
         },
         {
           "content_type":"text",
           "title":"Drama",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_DRAMA"
+          "payload":"tres"
         }
       ]
     }
