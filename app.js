@@ -383,7 +383,28 @@ function receivedPostback(event) {
 
   // When a postback is called, we'll send a message back to the sender to 
   // let them know it was successful
-  sendTextMessage(senderID, "Postback called");
+  
+  switch (payload) {
+    case 'quiero':
+      sendPackagesMessage(senderID);
+      break;
+
+    case 'pago':
+      sendTextMessage(senderID, "En este momento solamente aceptamos depositos por transferencia bancaria");
+      break;
+
+    case 'empresarial':
+      sendTextMessage(senderID, "Muchas gracias por preferirnos! En un momento nos estaremos contactando con vos.");
+      break;
+
+    case 'subscricion':
+      sendTextMessage(senderID, "La subscrición consta de un pago mensual por un numero de ensaladas fijas al mes, podés escoger que dias querés que te las llevemos.");
+      break;
+
+    case 'ondemand':
+      sendTextMessage(senderID, "El metodo on Demand consiste en un pago mensual por un numero de ensaladas variables a la quincena o mes, podés cambiar los dias de entrega.");
+      break;
+  }
 }
 
 /*
@@ -573,12 +594,45 @@ function sendButtonMessage(recipientId) {
             payload: "quiero"
           }, {
             type: "postback",
-            title: "¿Cómo les pago?",
+            title: "Metodos de pago",
             payload: "pago"
           },{
             type: "postback",
             title: "Pedidos empresariales",
             payload: "empresarial"
+          }]
+        }
+      }
+    }
+  };  
+
+  callSendAPI(messageData);
+}
+
+
+/*
+ * Send a button message using the Send API.
+ *
+ */
+function sendPackagesMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "button",
+          text: "Muchas gracias por preferirnos! Contamos con 2 modalidades, el pedido on Demand y por Subscripción. Cual te interesa mas?",
+          buttons:[{
+            type: "postback",
+            title: "Subscripción",
+            payload: "subscricion"
+          }, {
+            type: "postback",
+            title: "on Demand",
+            payload: "ondemand"
           }]
         }
       }
