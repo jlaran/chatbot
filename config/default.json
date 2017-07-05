@@ -1,6 +1,6 @@
 {
-    "appSecret": "",
-    "pageAccessToken": "",
-    "validationToken": "",
-    "serverURL": ""
+    "appSecret": "46463a11eaf92c04d75500102df53b03",
+    "pageAccessToken": "EAAK2Ow1gRo0BAKTKT77hUCgb2TGLVDpIHfDvkyikRmDQJwHUeo2KPvK6T9YCQyPJv3mv8KGHhpLUFMrLSjIwcQlSmkgNQaFUNse39N7vy6hdTutFEkAgBf6n5fSFwuptg6UDpVvgsqcIg44eJVu9vIrNZA8ENeMoCgap8At5wZB5OSfZBvJ",
+    "validationToken": "test_test_test_test",
+    "serverURL": "https://chatbot-test-jc.herokuapp.com/webhook"
 }
