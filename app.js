@@ -308,9 +308,18 @@ function receivedMessage(event) {
         break;
 
       default:
-
-
-        sendTextMessage(senderID, messageText);
+        setTimeout(function(){
+          sendReadReceipt(senderID);
+        }, 1000);
+        setTimeout(function(){
+          sendTypingOn(senderID);
+        }, 2000);
+        setTimeout(function(){
+          sendTypingOff(senderID);
+        }, 3000);
+        setTimeout(function(){
+          sendTextMessage(senderID, messageText);
+        }, 4000);
     }
   } else if (messageAttachments) {
     sendTextMessage(senderID, "Message with attachment received");
