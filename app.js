@@ -573,13 +573,20 @@ function sendButtonMessage(recipientId) {
             title: "Visita nuestro sitio web"
           }, {
             type: "postback",
-            title: "¿Cómo pido una ensalada?",
+            title: "Quiero una ensalada!",
             payload: "DEVELOPER_DEFINED_PAYLOAD"
-          }, {
+          },{
             type: "phone_number",
             title: "¿Cómo les pago?",
             payload: "+16505551234"
-          }]
+          },{
+            type: "phone_number",
+            title: "Pedidos empresariales",
+            payload: "+16505551234"
+          }
+
+
+          ]
         }
       }
     }
