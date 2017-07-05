@@ -566,7 +566,7 @@ function sendButtonMessage(recipientId) {
         type: "template",
         payload: {
           template_type: "button",
-          text: "This is test text ",
+          text: "Hola! Un gusto atenderle en Freshfruit! Contános como podemos ayudarte...",
           buttons:[{
             type: "web_url",
             url: "https://www.oculus.com/en-us/rift/",
