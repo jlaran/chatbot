@@ -313,13 +313,13 @@ function receivedMessage(event) {
         }, 1000);
         setTimeout(function(){
           sendTypingOn(senderID);
-        }, 2000);
+        }, 3000);
         setTimeout(function(){
           sendTypingOff(senderID);
-        }, 3000)
+        }, 4000)
         setTimeout(function(){
           sendTextMessage(senderID, messageText);
-        }, 3200);
+        }, 4200);
     }
   } else if (messageAttachments) {
     sendTextMessage(senderID, "Message with attachment received");
