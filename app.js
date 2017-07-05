@@ -321,9 +321,6 @@ function receivedMessage(event) {
 
       default:
         setTimeout(function(){
-          sendReadReceipt(senderID);
-        }, 1000);
-        setTimeout(function(){
           sendTypingOn(senderID);
         }, 3000);
         setTimeout(function(){
@@ -331,7 +328,7 @@ function receivedMessage(event) {
         }, 4000)
         setTimeout(function(){
             sendButtonMessage(senderID);
-        }, 4200);
+        }, 4000);
     }
   } else if (messageAttachments) {
     sendTextMessage(senderID, "Message with attachment received");
@@ -569,18 +566,22 @@ function sendButtonMessage(recipientId) {
         type: "template",
         payload: {
           template_type: "button",
-          text: "This is test text "+recipientId,
+          text: "Hola! Un gusto atenderle en Freshfruit! Contános como podemos ayudarte...",
           buttons:[{
             type: "web_url",
-            url: "https://www.oculus.com/en-us/rift/",
-            title: "Open Web URL"
+            url: "https://www.google.com",
+            title: "Visita nuestro sitio web"
           }, {
             type: "postback",
-            title: "Trigger Postback",
+            title: "¿Cómo pido una ensalada?",
             payload: "DEVELOPER_DEFINED_PAYLOAD"
           }, {
-            type: "phone_number",
-            title: "Call Phone Number",
+            type: "postback",
+            title: "¿Cómo les pago?",
+            payload: "+16505551234"
+          }, {
+            type: "postback",
+            title: "Pedidos empresariales",
             payload: "+16505551234"
           }]
         }
