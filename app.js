@@ -574,15 +574,15 @@ function sendButtonMessage(recipientId) {
           }, {
             type: "postback",
             title: "¿Cómo pido una ensalada?",
-            payload: "DEVELOPER_DEFINED_PAYLOAD"
+            payload: "pedir"
           }, {
             type: "postback",
             title: "¿Cómo les pago?",
-            payload: "+16505551234"
+            payload: "pagar"
           }, {
             type: "postback",
             title: "Pedidos empresariales",
-            payload: "+16505551234"
+            payload: "empresarial"
           }]
         }
       }
