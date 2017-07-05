@@ -287,9 +287,9 @@ function receivedMessage(event) {
       //   sendReceiptMessage(senderID);
       //   break;
 
-      // case 'quick reply':
-      //   sendQuickReply(senderID);
-      //   break;        
+      case 'quick reply':
+        sendQuickReply(senderID);
+        break;        
 
       // case 'read receipt':
       //   sendReadReceipt(senderID);
