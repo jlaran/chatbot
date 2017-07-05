@@ -308,7 +308,9 @@ function receivedMessage(event) {
         break;
 
       default:
-        sendTextMessage(senderID, messageText);
+
+
+        // sendTextMessage(senderID, messageText);
     }
   } else if (messageAttachments) {
     sendTextMessage(senderID, "Message with attachment received");
@@ -524,7 +526,7 @@ function sendTextMessage(recipientId, messageText) {
       id: recipientId
     },
     message: {
-      text: messageText,
+      text: "Hola, ¿Cómo esta?", //messageText
       metadata: "DEVELOPER_DEFINED_METADATA"
     }
   };
@@ -586,7 +588,7 @@ function sendGenericMessage(recipientId) {
             title: "rift",
             subtitle: "Next-generation virtual reality",
             item_url: "https://www.oculus.com/en-us/rift/",               
-            image_url: SERVER_URL + "/assets/rift.png",
+            image_url: SERVER_URL + "assets/rift.png",
             buttons: [{
               type: "web_url",
               url: "https://www.oculus.com/en-us/rift/",
@@ -600,7 +602,7 @@ function sendGenericMessage(recipientId) {
             title: "touch",
             subtitle: "Your Hands, Now in VR",
             item_url: "https://www.oculus.com/en-us/touch/",               
-            image_url: SERVER_URL + "/assets/touch.png",
+            image_url: SERVER_URL + "assets/touch.png",
             buttons: [{
               type: "web_url",
               url: "https://www.oculus.com/en-us/touch/",
@@ -647,14 +649,14 @@ function sendReceiptMessage(recipientId) {
             quantity: 1,
             price: 599.00,
             currency: "USD",
-            image_url: SERVER_URL + "/assets/riftsq.png"
+            image_url: SERVER_URL + "assets/riftsq.png"
           }, {
             title: "Samsung Gear VR",
             subtitle: "Frost White",
             quantity: 1,
             price: 99.99,
             currency: "USD",
-            image_url: SERVER_URL + "/assets/gearvrsq.png"
+            image_url: SERVER_URL + "assets/gearvrsq.png"
           }],
           address: {
             street_1: "1 Hacker Way",
