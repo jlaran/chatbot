@@ -316,10 +316,10 @@ function receivedMessage(event) {
         }, 2000);
         setTimeout(function(){
           sendTypingOff(senderID);
-        }, 3000);
+        }, 3000)
         setTimeout(function(){
           sendTextMessage(senderID, messageText);
-        }, 4000);
+        }, 3500);
     }
   } else if (messageAttachments) {
     sendTextMessage(senderID, "Message with attachment received");
